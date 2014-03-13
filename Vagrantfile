@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     # expose HTTP ports to the local network via the host
-    config.vm.network :forwarded_port, guest: 80, host: 80
-    config.vm.network :forwarded_port, guest: 8000, host: 8000
+    #config.vm.network :forwarded_port, guest: 80, host: 80
+    #config.vm.network :forwarded_port, guest: 8000, host: 8000
     config.vm.network :private_network, ip: "10.10.10.10"
 
     # enable symlinks in Virtualbox shared folders
