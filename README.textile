@@ -1,3 +1,12 @@
 h1. Vagrant-template
 
-Vagrantfile and Salt minion config template for use with new projects
+Vagrantfile and Salt minion config template for use with new projects.
+
+Tailor the project details in @Vagrantfile@ and the @pillars@ directory, then run @vagrant up@.
+
+h2. The Functional Four
+
+* https://github.com/BigglesZX/salt-common
+* https://github.com/BigglesZX/salt-dev
+* https://github.com/BigglesZX/dotfiles
+* https://github.com/BigglesZX/Vagrant-template
