@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
 
     # enable symlinks in Virtualbox shared folders
     config.vm.provider :virtualbox do |v|
+        v.name = "fooproject"
         v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
     end
 
@@ -23,11 +24,11 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./salt", "/srv/salt"
 
     # common project Salt states
-    project_states = File.join(File.expand_path('~'), '.salt-project')
+    project_states = File.join(File.expand_path('~'), '.salt-common')
     if File.directory?(project_states)
-        config.vm.synced_folder project_states, "/home/vagrant/.salt-project"
+        config.vm.synced_folder project_states, "/home/vagrant/.salt-common"
     else
-        abort("Vagrant error: Please install your salt-project common states from https://github.com/BigglesZX/salt-project")
+        abort("Vagrant error: Please install your common Salt states from https://github.com/BigglesZX/salt-common")
     end
 
     # developer (environment-centric) Salt states
