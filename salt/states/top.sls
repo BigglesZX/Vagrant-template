@@ -3,6 +3,7 @@ vagrant:
     - libxslt
     - libfreetype
     - libjpeg
+    - libpq-dev
     - libmysqlclientdev
 
     - postfix
