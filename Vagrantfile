@@ -1,14 +1,14 @@
 #!/usr/bin/ruby
 
+Vagrant.require_version ">= 1.9.1"
 Vagrant.configure("2") do |config|
 
     # box setup
-    config.vm.box = "precise64"
-    config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    config.vm.box = "ubuntu/trusty64"
 
     # expose HTTP ports to the local network via the host
-    #config.vm.network :forwarded_port, guest: 80, host: 80
-    #config.vm.network :forwarded_port, guest: 8000, host: 8000
+    config.vm.network :forwarded_port, guest: 80, host: 80
+    config.vm.network :forwarded_port, guest: 8000, host: 8000
     config.vm.network :private_network, ip: "10.10.10.10"
 
     # enable symlinks in Virtualbox shared folders
@@ -44,6 +44,6 @@ Vagrant.configure("2") do |config|
         salt.run_highstate = true
         salt.minion_config = "salt/config/minion.conf"
         salt.install_type = "git"
-        salt.install_args = "0.17"
+        salt.install_args = "v2016.11.1"
     end
 end
