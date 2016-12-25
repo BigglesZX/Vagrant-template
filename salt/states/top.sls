@@ -14,5 +14,6 @@ vagrant:
     - ntp
     - virtualenv
     - gitflow
+    - heroku
 
     - developer
