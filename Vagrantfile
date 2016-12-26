@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
 
     # box setup
     config.vm.box = "ubuntu/trusty64"
+    config.vm.hostname = "fooproject"
 
     # expose HTTP ports to the local network via the host
     config.vm.network :forwarded_port, guest: 80, host: 80
